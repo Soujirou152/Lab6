@@ -35,8 +35,8 @@ public class ExceptionsLab {
 		 //method2(); // or Lab5.method2();
 		//method3();
 		 //method4();
-		 method5();
-		// method6();
+		 //method5();
+		 method6();
 		System.out.println(" After return from call to method2() from within method1().");
 	}
 
@@ -60,16 +60,13 @@ public class ExceptionsLab {
 		try
 		{
 			System.out.println("   Before int division in method3().");
-			int i = 1 /0; // ArithmeticException
+			int i = 1 /1; // ArithmeticException
 			System.out.println("   After int division in method3().");
 
 			System.out.println("   Before array index in method3().");
-			System.out.println(stooges[1]); // ArrayIndexOutOfBoundsException
+			System.out.println(stooges[47]); // ArrayIndexOutOfBoundsException
 			System.out.println("   After array index in method3().");
 
-			Thread.sleep(1000);
-
-			 //throw new Exception();
 			
 			//throw new RuntimeException();
 		}
@@ -94,7 +91,7 @@ public class ExceptionsLab {
 		try
 		{
 			System.out.println("    Before method4() int division.");
-			int i = 1 / 0; // ArithmeticException
+			int i = 1 / 1; // ArithmeticException
 			System.out.println("    After method4() int division.");
 
 			System.out.println("    Before method4() array index.");
@@ -141,8 +138,7 @@ public class ExceptionsLab {
 		{
 			System.out.println("     ArrayIndexOutOfBoundsException in method5(): " + aioobe);
 
-			// throw new RuntimeException("Exception handlers can throw
-			// exceptions!");
+
 
 			System.out.println("     Returning to caller...");
 
@@ -159,17 +155,21 @@ public class ExceptionsLab {
 		try
 		{
 			System.out.println("      Before method6() int division.");
-			int i = 1 / 1; // ArithmeticException
+			int i = 1 /0; // ArithmeticException
 			System.out.println("      After method6() int division.");
 
 			System.out.println("      Before method6() array index.");
-			System.out.println(stooges[1]); // ArrayIndexOutOfBoundsException
+			System.out.println(stooges[-1]); // ArrayIndexOutOfBoundsException
 			System.out.println("      After method6() array index.");
+			
+//			throw new ArithmeticException("Exception handlers can throw exceptions!");
+			
 		}
 		catch (ArithmeticException ae)
 		{
 			System.out.println("      ArithmeticException in method6(): " + ae.toString());
 			System.out.println("      Continuing...");
+			throw new RuntimeException("Exception handlers can throw exceptions!");
 		}
 		catch (ArrayIndexOutOfBoundsException aioobe)
 		{
