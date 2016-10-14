@@ -42,9 +42,7 @@ class MyClass
 			return 0;
 		else if (b == 0)
 			return 0;
-		else
-			return 47;
-		// else
-		// return 1 + multiply(a - 1, b);
+		 else
+		 return b + multiply(a - 1, b);
 	}
 }
